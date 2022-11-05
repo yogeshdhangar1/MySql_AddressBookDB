@@ -1,34 +1,24 @@
 
 
 
-mysql> select * from addressbook where city ='mumbai';
-+-------+------------+---------+--------+-------+---------+--------+-----------+
-| fname | lName      | address | city   | state | email   | zip    | Number    |
-+-------+------------+---------+--------+-------+---------+--------+-----------+
-| ketan | chaidarkar | thane   | mumbai | MH    | uyx@123 | 127873 | 928487697 |
-+-------+------------+---------+--------+-------+---------+--------+-----------+
-1 row in set (0.00 sec)
+mysql> select * from addressbook;
++---------+------------+---------+-----------+-------+---------+--------+-----------+
+| fname   | lName      | address | city      | state | email   | zip    | Number    |
++---------+------------+---------+-----------+-------+---------+--------+-----------+
+| yogesh  | dhangar    | wagholi | pune      | MH    | ybc@123 |  12345 |  92840465 |
+| bhavesh | patil      | nijar   | Nandurbar | MH    | xyz@123 | 127655 |  92840897 |
+| ketan   | chaidarkar | thane   | mumbai    | MH    | uyx@123 | 127873 | 928487697 |
++---------+------------+---------+-----------+-------+---------+--------+-----------+
+3 rows in set (0.00 sec)
 
-mysql> select count(*)from addressbook where city = 'pune';
-+----------+
-| count(*) |
-+----------+
-|        1 |
-+----------+
-1 row in set (0.39 sec)
-
-mysql> select count(*)from addressbook where city = 'mumbai';
-+----------+
-| count(*) |
-+----------+
-|        1 |
-+----------+
-1 row in set (0.00 sec)
-
-mysql> select count(*)from addressbook where city = 'nandurbar';
-+----------+
-| count(*) |
-+----------+
-|        1 |
-+----------+
-1 row in set (0.00 sec)sec)
+mysql> select * from addressbook order by fname ABC;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ABC' at line 1
+mysql> select * from addressbook order by fname ASC;
++---------+------------+---------+-----------+-------+---------+--------+-----------+
+| fname   | lName      | address | city      | state | email   | zip    | Number    |
++---------+------------+---------+-----------+-------+---------+--------+-----------+
+| bhavesh | patil      | nijar   | Nandurbar | MH    | xyz@123 | 127655 |  92840897 |
+| ketan   | chaidarkar | thane   | mumbai    | MH    | uyx@123 | 127873 | 928487697 |
+| yogesh  | dhangar    | wagholi | pune      | MH    | ybc@123 |  12345 |  92840465 |
++---------+------------+---------+-----------+-------+---------+--------+-----------+
+3 rows in set (0.38 sec)
