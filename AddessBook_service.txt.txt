@@ -1,18 +1,27 @@
 mysql> select * from addressbook;
-+---------+------------+---------+-----------+-------+---------+--------+-----------+----------+
-| fname   | lName      | address | city      | state | email   | zip    | Number    | reletive |
-+---------+------------+---------+-----------+-------+---------+--------+-----------+----------+
-| yogesh  | dhangar    | wagholi | pune      | MH    | ybc@123 |  12345 |  92840465 | amol     |
-| bhavesh | patil      | nijar   | Nandurbar | MH    | xyz@123 | 127655 |  92840897 | yogesh   |
-| ketan   | chaidarkar | thane   | mumbai    | MH    | uyx@123 | 127873 | 928487697 | nitin    |
-+---------+------------+---------+-----------+-------+---------+--------+-----------+----------+
++---------+------------+---------+-----------+-------+---------+--------+-----------+----------+----------+
+| fname   | lName      | address | city      | state | email   | zip    | Number    | reletive | type     |
++---------+------------+---------+-----------+-------+---------+--------+-----------+----------+----------+
+| yogesh  | dhangar    | wagholi | pune      | MH    | ybc@123 |  12345 |  92840465 | amol     | Brother  |
+| bhavesh | patil      | nijar   | Nandurbar | MH    | xyz@123 | 127655 |  92840897 | yogesh   | Engineer |
+| ketan   | chaidarkar | thane   | mumbai    | MH    | uyx@123 | 127873 | 928487697 | nitin    | techer   |
++---------+------------+---------+-----------+-------+---------+--------+-----------+----------+----------+
 3 rows in set (0.00 sec)
 
-mysql> select count(*) from addressbook;
-+----------+
-| count(*) |
-+----------+
-|        3 |
-+----------+
-1 row in set (0.07 sec)
+mysql> update addressbook set type = 'Freind' where fname = 'bhavesh';
+Query OK, 1 row affected (0.08 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
 
+mysql> update addressbook set type = 'Freind' where fname = 'ketan';
+Query OK, 1 row affected (0.05 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from addressbook;
++---------+------------+---------+-----------+-------+---------+--------+-----------+----------+---------+
+| fname   | lName      | address | city      | state | email   | zip    | Number    | reletive | type    |
++---------+------------+---------+-----------+-------+---------+--------+-----------+----------+---------+
+| yogesh  | dhangar    | wagholi | pune      | MH    | ybc@123 |  12345 |  92840465 | amol     | Brother |
+| bhavesh | patil      | nijar   | Nandurbar | MH    | xyz@123 | 127655 |  92840897 | yogesh   | Freind  |
+| ketan   | chaidarkar | thane   | mumbai    | MH    | uyx@123 | 127873 | 928487697 | nitin    | Freind  |
++---------+------------+---------+-----------+-------+---------+--------+-----------+----------+---------+
+3 rows in set (0.00 sec)
