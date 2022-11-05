@@ -1,17 +1,19 @@
-mysql> create database addressbook_service;
-Query OK, 1 row affected (0.08 sec)
+mysql> create table addressbook(fname varchar(10),lName varchar(10),address varchar(10),city varchar(10),state varchar(10),email varchar(20),zip int (10),Number int (10));
+Query OK, 0 rows affected, 2 warnings (0.24 sec)
 
-mysql> show databases;
-+---------------------+
-| Database            |
-+---------------------+
-| addressbook_service |
-| employee            |
-| information         |
-| information_schema  |
-| mysql               |
-| payroll_servicedb   |
-| performance_schema  |
-| yogeshdb            |
-+---------------------+
+mysql> desc adressbook;
+ERROR 1146 (42S02): Table 'addressbook_service.adressbook' doesn't exist
+mysql> desc addressbook;
++---------+-------------+------+-----+---------+-------+
+| Field   | Type        | Null | Key | Default | Extra |
++---------+-------------+------+-----+---------+-------+
+| fname   | varchar(10) | YES  |     | NULL    |       |
+| lName   | varchar(10) | YES  |     | NULL    |       |
+| address | varchar(10) | YES  |     | NULL    |       |
+| city    | varchar(10) | YES  |     | NULL    |       |
+| state   | varchar(10) | YES  |     | NULL    |       |
+| email   | varchar(20) | YES  |     | NULL    |       |
+| zip     | int         | YES  |     | NULL    |       |
+| Number  | int         | YES  |     | NULL    |       |
++---------+-------------+------+-----+---------+-------+
 8 rows in set (0.00 sec)
