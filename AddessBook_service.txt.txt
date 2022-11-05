@@ -1,17 +1,4 @@
-mysql> select * from addressbook;
-+---------+------------+---------+-----------+-------+---------+--------+-----------+
-| fname   | lName      | address | city      | state | email   | zip    | Number    |
-+---------+------------+---------+-----------+-------+---------+--------+-----------+
-| yogesh  | dhangar    | wagholi | pune      | MH    | ybc@123 |  12345 |  92840465 |
-| Mayur   | Babar      | BJs     | pune      | MH    | abc@123 |  12345 |  92840865 |
-| bhavesh | patil      | nijar   | Nandurbar | MH    | xyz@123 | 127655 |  92840897 |
-| ketan   | chaidarkar | thane   | mumbai    | MH    | uyx@123 | 127873 | 928487697 |
-+---------+------------+---------+-----------+-------+---------+--------+-----------+
-4 rows in set (0.00 sec)
 
-mysql> update addressbook set city = 'BLR'where fname = 'mayur';
-Query OK, 1 row affected (0.08 sec)
-Rows matched: 1  Changed: 1  Warnings: 0
 
 mysql> select * from addressbook;
 +---------+------------+---------+-----------+-------+---------+--------+-----------+
@@ -23,3 +10,16 @@ mysql> select * from addressbook;
 | ketan   | chaidarkar | thane   | mumbai    | MH    | uyx@123 | 127873 | 928487697 |
 +---------+------------+---------+-----------+-------+---------+--------+-----------+
 4 rows in set (0.00 sec)
+
+mysql> delete from addressbook where fname = 'mayur';
+Query OK, 1 row affected (0.08 sec)
+
+mysql> select * from addressbook;
++---------+------------+---------+-----------+-------+---------+--------+-----------+
+| fname   | lName      | address | city      | state | email   | zip    | Number    |
++---------+------------+---------+-----------+-------+---------+--------+-----------+
+| yogesh  | dhangar    | wagholi | pune      | MH    | ybc@123 |  12345 |  92840465 |
+| bhavesh | patil      | nijar   | Nandurbar | MH    | xyz@123 | 127655 |  92840897 |
+| ketan   | chaidarkar | thane   | mumbai    | MH    | uyx@123 | 127873 | 928487697 |
++---------+------------+---------+-----------+-------+---------+--------+-----------+
+3 rows in set (0.00 sec)
