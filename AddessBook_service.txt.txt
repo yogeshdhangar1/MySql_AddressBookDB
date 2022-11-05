@@ -1,19 +1,4 @@
 
-
-mysql> select * from addressbook;
-+---------+------------+---------+-----------+-------+---------+--------+-----------+
-| fname   | lName      | address | city      | state | email   | zip    | Number    |
-+---------+------------+---------+-----------+-------+---------+--------+-----------+
-| yogesh  | dhangar    | wagholi | pune      | MH    | ybc@123 |  12345 |  92840465 |
-| Mayur   | Babar      | BJs     | BLR       | MH    | abc@123 |  12345 |  92840865 |
-| bhavesh | patil      | nijar   | Nandurbar | MH    | xyz@123 | 127655 |  92840897 |
-| ketan   | chaidarkar | thane   | mumbai    | MH    | uyx@123 | 127873 | 928487697 |
-+---------+------------+---------+-----------+-------+---------+--------+-----------+
-4 rows in set (0.00 sec)
-
-mysql> delete from addressbook where fname = 'mayur';
-Query OK, 1 row affected (0.08 sec)
-
 mysql> select * from addressbook;
 +---------+------------+---------+-----------+-------+---------+--------+-----------+
 | fname   | lName      | address | city      | state | email   | zip    | Number    |
@@ -23,3 +8,31 @@ mysql> select * from addressbook;
 | ketan   | chaidarkar | thane   | mumbai    | MH    | uyx@123 | 127873 | 928487697 |
 +---------+------------+---------+-----------+-------+---------+--------+-----------+
 3 rows in set (0.00 sec)
+
+mysql> select city from addressbook;
++-----------+
+| city      |
++-----------+
+| pune      |
+| Nandurbar |
+| mumbai    |
++-----------+
+3 rows in set (0.00 sec)
+
+mysql> select * from addressbook where name ='bhavesh';
+ERROR 1054 (42S22): Unknown column 'name' in 'where clause'
+mysql> select * from addressbook where city ='pune';
++--------+---------+---------+------+-------+---------+-------+----------+
+| fname  | lName   | address | city | state | email   | zip   | Number   |
++--------+---------+---------+------+-------+---------+-------+----------+
+| yogesh | dhangar | wagholi | pune | MH    | ybc@123 | 12345 | 92840465 |
++--------+---------+---------+------+-------+---------+-------+----------+
+1 row in set (0.00 sec)
+
+mysql> select * from addressbook where city ='mumbai';
++-------+------------+---------+--------+-------+---------+--------+-----------+
+| fname | lName      | address | city   | state | email   | zip    | Number    |
++-------+------------+---------+--------+-------+---------+--------+-----------+
+| ketan | chaidarkar | thane   | mumbai | MH    | uyx@123 | 127873 | 928487697 |
++-------+------------+---------+--------+-------+---------+--------+-----------+
+1 row in set (0.00 sec)
